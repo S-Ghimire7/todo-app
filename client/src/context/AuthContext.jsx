@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { apiRequest } from "../api.js";
+import { apiRequest } from "../api";
 
 const AuthContext = createContext(null);
 
@@ -45,7 +45,7 @@ export function AuthProvider({ children }) {
   }
 
   async function login({ username, password }) {
-    const data = await apiRequest("/auth/login", {
+    const data = await apiRequest("/api/auth/login", {
       method: "POST",
       body: { username, password },
     });
@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
 
   async function logout() {
     try {
-      await apiRequest("/auth/logout", { method: "POST", token });
+      await apiRequest("/api/auth/logout", { method: "POST", token });
     } finally {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
