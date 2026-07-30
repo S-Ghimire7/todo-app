@@ -17,16 +17,10 @@ function NavBar() {
         <span>Welcome, {user.fullName}</span>
         <button onClick={handleLogout}>Log Out</button>
         <nav>
-          <NavLink
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            to={"/"}
-          >
+          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to={"/"}>
             Home
           </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            to={"/todo/add"}
-          >
+          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to={"/todo/add"}>
             Add To-Do Item
           </NavLink>
         </nav>

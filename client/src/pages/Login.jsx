@@ -24,17 +24,8 @@ export default function Login() {
     <form onSubmit={handleSubmit}>
       <h2>Log In</h2>
       {error && <p role="alert">{error}</p>}
-      <input
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button type="submit">Log In</button>
       <p>
         No account? <Link to="/register">Register</Link>

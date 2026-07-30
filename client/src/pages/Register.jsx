@@ -26,27 +26,10 @@ export default function Register() {
     <form onSubmit={handleSubmit}>
       <h2>Register</h2>
       {error && <p role="alert">{error}</p>}
-      <input
-        placeholder="First Name"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <input
-        placeholder="Last Name"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <input
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <input placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      <input placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+      <input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button type="submit">Register</button>
       <p>
         Already have an account? <Link to="/login">Log In</Link>

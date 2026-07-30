@@ -19,7 +19,6 @@ export const Todo = sequelize.define(
     },
     userId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
   },
   {

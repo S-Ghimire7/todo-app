@@ -9,6 +9,7 @@ function TaskContainer({ containerTitle }) {
   const [filterUrgent, setFilterUrgent] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { token } = useAuth();
+
   useEffect(() => {
     const loadTasks = async () => {
       let savedTasks = await getTasks(token);

@@ -26,15 +26,9 @@ export async function register(req, res) {
 
   const fullName = `${user.firstName} ${user.lastName}`;
 
-  const token = jwt.sign(
-    { userId: user.id, fullName },
-    process.env.JWT_SECRET,
-    { expiresIn: "1d" },
-  );
+  const token = jwt.sign({ userId: user.id, fullName }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
-  res
-    .status(201)
-    .json({ token, id: user.id, username: user.username, fullName });
+  res.status(201).json({ token, id: user.id, username: user.username, fullName });
 }
 
 export async function login(req, res) {
@@ -52,15 +46,11 @@ export async function login(req, res) {
 
   const fullName = `${user.firstName} ${user.lastName}`;
 
-  const token = jwt.sign(
-    { userId: user.id, fullName },
-    process.env.JWT_SECRET,
-    { expiresIn: "1d" },
-  );
+  const token = jwt.sign({ userId: user.id, fullName }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
   res.json({ token, id: user.id, username: user.username, fullName });
 }
 
 export async function logout(req, res) {
-  res.json({ message: "Logged out successfully" });
+  res.json({ message: "Logged Out Successfully" });
 }

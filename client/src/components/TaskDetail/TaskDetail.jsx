@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getTaskById } from "../../services/TaskService";
 import { useAuth } from "../../context/AuthContext";
+
 function TaskDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [task, setTask] = useState(null);
@@ -9,6 +10,7 @@ function TaskDetail() {
   const params = useParams();
   const { id } = params;
   const { token } = useAuth();
+
   useEffect(() => {
     setIsLoading(true);
     getTaskById(id, token).then((task) => {

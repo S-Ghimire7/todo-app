@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import "./Form.css";
 import { useAuth } from "../../context/AuthContext";
+
 function Form({}) {
   const [title, setTitle] = useState("");
   const [deadline, setDeadline] = useState("");
@@ -11,11 +12,12 @@ function Form({}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const { token } = useAuth();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await createTask(token, title, deadline, isUrgent);
+      await createTask(title, deadline, isUrgent, token);
       toast.success("Created task successfully");
       navigate("/");
     } catch (err) {

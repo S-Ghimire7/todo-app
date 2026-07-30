@@ -1,12 +1,6 @@
 import { Router } from "express";
 import { requireAuth } from "../middlewares/requireAuth.js";
-import {
-  getTasks,
-  getTaskById,
-  createTask,
-  updateTask,
-  deleteTask,
-} from "../controllers/todoController.js";
+import { getTasks, getTaskById, createTask, updateTask, deleteTask } from "../controllers/todoController.js";
 
 const router = Router();
 
